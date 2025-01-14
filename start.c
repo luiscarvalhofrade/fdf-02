@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:54 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/13 21:29:55 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/01/13 21:58:13 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	centralize_width(t_map *map)
 {
 	int	width_factor;
 
-	width_factor = SC_WIDTH / map->max_x;
+	width_factor = map->max_x / 2;
 	return (width_factor);
 }
 
@@ -24,7 +24,7 @@ int	centralize_height(t_map *map)
 {
 	int	height_factor;
 
-	height_factor = SC_HEIGHT / map->max_y;
+	height_factor = map->max_y / 2;
 	return (height_factor);
 }
 

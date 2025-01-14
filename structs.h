@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:58 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/13 21:29:59 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/01/13 22:10:17 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,7 @@ typedef struct s_img
 
 typedef struct s_proj
 {
-	double	angle_x;
-	double	angle_y;
-	double	angle_z;
+	double	angle;
 	int		scale;
 	double	width_factor;
 	double	height_factor;

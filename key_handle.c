@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:20 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/13 21:29:21 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/01/13 22:10:03 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int	handle_translate_height(int keycode, t_fdf *fdf)
 int	hanle_rotation(int keycode, t_fdf *fdf)
 {
 	if (keycode == F1_KEY)
-		fdf->proj->angle_y += 0.1;
+		fdf->proj->angle += 0.1;
 	else if (keycode == F2_KEY)
-		fdf->proj->angle_y -= 0.1;
+		fdf->proj->angle -= 0.1;
 	re_render_img(fdf);
 	return (0);
 }

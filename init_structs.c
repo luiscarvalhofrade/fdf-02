@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:13 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/13 21:29:15 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/01/13 22:09:32 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,7 @@ t_proj	*init_proj(t_map *map)
 	projection = (t_proj *)malloc(sizeof(t_proj));
 	if (!projection)
 		return (NULL);
-	projection->angle_x = 0.0;
-	projection->angle_y = 0.0;
-	projection->angle_z = 0.0;
+	projection->angle = 0.0;
 	projection->scale = initial_scale();
 	projection->width_factor = centralize_width(map);
 	projection->height_factor = centralize_height(map);
