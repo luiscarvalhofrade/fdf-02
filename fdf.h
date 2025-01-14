@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:28:53 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/13 21:28:54 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:55:01 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int		ft_len_of_new_line(t_list *list);
 int		ft_count_items(const char *s, char c);
 int		ft_atoi(const char *nptr);
 int		ft_atoi_base(char *nptr, int base);
-int		centralize_width(t_map *map);
-int		centralize_height(t_map *map);
+int		centralize_width(void);
+int		centralize_height(void);
 int		initial_scale(void);
 
 int		is_valid_map(char *file);
@@ -74,7 +74,7 @@ void	close_reaction(t_fdf *fdf);
 
 t_fdf	*init_fdf(t_map *map);
 
-t_proj	*init_proj(t_map *map);
+t_proj	*init_proj(void);
 
 t_img	*init_img(void *mlx, int sc_width, int sc_height);
 

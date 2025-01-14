@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:13 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/13 22:09:32 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:55:08 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ t_fdf	*init_fdf(t_map *map)
 		fdf->sc_height, "FdF");
 	fdf->img = init_img(fdf->mlx, fdf->sc_width, fdf->sc_height);
 	fdf->map = map;
-	fdf->proj = init_proj(fdf->map);
+	fdf->proj = init_proj();
 	return (fdf);
 }
 
-t_proj	*init_proj(t_map *map)
+t_proj	*init_proj(void)
 {
 	t_proj	*projection;
 
@@ -52,8 +52,8 @@ t_proj	*init_proj(t_map *map)
 		return (NULL);
 	projection->angle = 0.0;
 	projection->scale = initial_scale();
-	projection->width_factor = centralize_width(map);
-	projection->height_factor = centralize_height(map);
+	projection->width_factor = centralize_width();
+	projection->height_factor = centralize_height();
 	projection->z_scale = 1;
 	return (projection);
 }
