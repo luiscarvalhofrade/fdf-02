@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:28:53 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/14 12:55:01 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/01/15 14:18:19 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # define SC_WIDTH 1024
 # define SC_HEIGHT 768
+# define COLOR_DEFAULT 0x00FF00
 # define BUFFER_SIZE 5
 
 # include "keys.h"
-# include "colors.h"
 # include "structs.h"
 # include <fcntl.h>
 # include <math.h>
