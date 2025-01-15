@@ -6,21 +6,11 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:30:02 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/13 21:30:03 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/01/15 14:15:53 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
-{
-	char	*dst;
-
-	if (x < 0 || x >= SC_WIDTH || y < 0 || y >= SC_HEIGHT)
-		return ;
-	dst = img->addr + (y * img->line_len + x * (img->bpp / 8));
-	*(unsigned int *)dst = color;
-}
 
 int	handle_close(t_fdf *fdf)
 {
