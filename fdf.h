@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:28:53 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/15 14:18:19 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/01/15 14:24:24 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define SC_WIDTH 1024
 # define SC_HEIGHT 768
 # define COLOR_DEFAULT 0x00FF00
-# define BUFFER_SIZE 5
+# define BUFFER_SIZE 100
 
 # include "keys.h"
 # include "structs.h"
@@ -24,7 +24,6 @@
 # include <math.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include "./mlx/mlx.h"
 
 char	*get_next_line(int fd);
