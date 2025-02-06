@@ -6,12 +6,18 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:58 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/13 22:10:17 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/06 16:29:01 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
+
+typedef struct s_start_pos
+{
+	int		scale;
+	double	height_factor;
+}			t_start_pos;
 
 typedef struct s_map
 {

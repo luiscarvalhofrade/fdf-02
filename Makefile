@@ -109,7 +109,7 @@ $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "Compiled $< to $@"
 leakfull:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./${NAME} maps/test_maps/42.fdf
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./${NAME} maps/test_maps/julia.fdf
 
 clean:
 	@rm -rf $(OBJ)
