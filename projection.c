@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:34 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/14 12:57:32 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:24:22 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,13 @@ t_2d_pt	isometric_proj(t_3d_pt point)
 
 t_2d_pt	translate_proj(t_2d_pt point, t_proj *proj)
 {
-	point.x += SC_WIDTH / proj->width_factor;
-	point.y += SC_HEIGHT / proj->height_factor;
+	int screen_center_x;
+	int screen_center_y;
+
+	screen_center_x = SC_WIDTH / 2;
+	screen_center_y = SC_HEIGHT / 2;
+	point.x += screen_center_x / proj->width_factor;
+	point.y += screen_center_y / proj->height_factor;
 	return (point);
 }
 

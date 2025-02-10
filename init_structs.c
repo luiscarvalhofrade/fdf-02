@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:13 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/14 12:55:08 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:06:45 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,27 @@ t_fdf	*init_fdf(t_map *map)
 	return (fdf);
 }
 
+t_camera	*init_camera(void)
+{
+	t_camera	*camera;
+
+	camera = (t_camera *)malloc(sizeof(t_camera));
+	if (!camera)
+		return (NULL);
+    camera->pos_x = 0.0f;
+    camera->pos_y = 0.0f;
+    camera->pos_z = 10.0f; // Place the camera above the map
+
+    camera->target_x = 0.0f;
+    camera->target_y = 0.0f;
+    camera->target_z = 0.0f; // Look at the center of the map
+
+    camera->up_x = 0.0f;
+    camera->up_y = 1.0f;
+    camera->up_z = 0.0f; // Standard up vector
+	return (camera);
+}
+
 t_proj	*init_proj(void)
 {
 	t_proj	*projection;
@@ -54,9 +75,16 @@ t_proj	*init_proj(void)
 	projection->scale = initial_scale();
 	projection->width_factor = centralize_width();
 	projection->height_factor = centralize_height();
+	projection->max_d_x = 0;
+	projection->max_d_y = 0;
+	projection->min_d_x = INT_MIN;
+	projection->min_d_y = INT_MIN;
+	projection->camera = init_camera();
 	projection->z_scale = 1;
 	return (projection);
 }
+
+
 
 t_map	*init_map(void)
 {

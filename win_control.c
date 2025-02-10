@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:30:02 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/15 14:15:53 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:12:46 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	handle_keypress(int keycode, t_fdf *fdf)
 		return (0);
 	}
 	else if (keycode == F1_KEY || keycode == F2_KEY)
-		hanle_rotation(keycode, fdf);
+		handle_rotation(keycode, fdf);
 	else if (keycode == PLUS_KEY || keycode == MINUS_KEY)
 		handle_scale(keycode, fdf);
 	else if (keycode == RIGHT_KEY || keycode == LEFT_KEY)
