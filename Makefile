@@ -81,7 +81,6 @@ SRC = 	fdf.c \
 		start.c \
 		rotate.c \
 		projection.c \
-		camera.c \
 		line_algo.c \
 		win_control.c \
 		draw.c \

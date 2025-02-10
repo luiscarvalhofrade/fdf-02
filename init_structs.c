@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:13 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/10 17:06:45 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/10 18:05:02 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_fdf	*init_fdf(t_map *map)
 		fdf->sc_height, "FdF");
 	fdf->img = init_img(fdf->mlx, fdf->sc_width, fdf->sc_height);
 	fdf->map = map;
-	fdf->proj = init_proj();
+	fdf->proj = init_proj(map);
 	return (fdf);
 }
 
@@ -64,7 +64,7 @@ t_camera	*init_camera(void)
 	return (camera);
 }
 
-t_proj	*init_proj(void)
+t_proj	*init_proj(t_map *map)
 {
 	t_proj	*projection;
 
@@ -72,13 +72,13 @@ t_proj	*init_proj(void)
 	if (!projection)
 		return (NULL);
 	projection->angle = 0.0;
-	projection->scale = initial_scale();
+	projection->scale = initial_scale(map);
 	projection->width_factor = centralize_width();
-	projection->height_factor = centralize_height();
+	projection->height_factor = centralize_height(map);
 	projection->max_d_x = 0;
 	projection->max_d_y = 0;
-	projection->min_d_x = INT_MIN;
-	projection->min_d_y = INT_MIN;
+	projection->min_d_x = 0;
+	projection->min_d_y = 0;
 	projection->camera = init_camera();
 	projection->z_scale = 1;
 	return (projection);

@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:28:53 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/10 17:24:48 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/10 18:04:24 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int		ft_count_items(const char *s, char c);
 int		ft_atoi(const char *nptr);
 int		ft_atoi_base(char *nptr, int base);
 int		centralize_width(void);
-int		centralize_height(void);
-int		initial_scale(void);
+int     centralize_height(t_map *map);
+int		initial_scale(t_map *map);
 
 int		is_valid_map(char *file);
 int		*fill_line_value(int **matrix, char **result, int y, int max_x);
@@ -80,7 +80,7 @@ float	**fill_view_matrix(t_camera *camera);
 
 t_fdf	*init_fdf(t_map *map);
 
-t_proj	*init_proj(void);
+t_proj	*init_proj(t_map *map);
 
 t_img	*init_img(void *mlx, int sc_width, int sc_height);
 
