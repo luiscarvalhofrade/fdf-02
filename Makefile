@@ -77,6 +77,7 @@ SRC = 	fdf.c \
 		read_map.c \
 		read_map_helper.c \
 		read_map_utils.c \
+		read_map_max_values.c \
 		init_structs.c \
 		start.c \
 		rotate.c \

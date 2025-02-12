@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:58 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/12 16:27:54 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:42:27 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,6 @@ typedef struct s_proj
 	int			scale;
 	double		move_x;
 	double		move_y;
-	int			max_d_x;
-	int			max_d_y;
-	int			min_d_x;
-	int			min_d_y;
-	int			map_center_x;
-	int			map_center_y;
 	double		z_scale;
 }			t_proj;
 

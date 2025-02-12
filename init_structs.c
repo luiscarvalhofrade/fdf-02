@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:13 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/12 16:35:52 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:43:48 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,6 @@ t_proj	*init_proj(t_map *map)
 	projection->z_scale = 1;
 	projection->move_x = SC_WIDTH / 2;
 	projection->move_y = SC_HEIGHT / 2;
-	projection->max_d_x = 0;
-	projection->max_d_y = 0;
-	projection->min_d_x = 0;
-	projection->min_d_y = 0;
 	return (projection);
 }
 

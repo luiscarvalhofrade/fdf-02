@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:28:53 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/12 16:30:06 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:44:03 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ int		ft_len_of_new_line(t_list *list);
 int		ft_count_items(const char *s, char c);
 int		ft_atoi(const char *nptr);
 int		ft_atoi_base(char *nptr, int base);
-int		centralize_width(void);
-int     centralize_height(t_map *map);
 double	initial_scale(t_map *map);
 
 int		is_valid_map(char *file);
@@ -54,6 +52,9 @@ int		handle_translate_width(int keycode, t_fdf *fdf);
 int		handle_translate_height(int keycode, t_fdf *fdf);
 int		handle_rotation(int keycode, t_fdf *fdf);
 int		handle_scale_z(int keycode, t_fdf *fdf);
+
+int     get_max_y(char *file);
+int     get_max_x(char *file);
 
 t_map	*init_map(void);
 t_map	*create_map(char *file);
