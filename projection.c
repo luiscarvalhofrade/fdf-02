@@ -6,11 +6,18 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:34 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/10 17:48:15 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:35:17 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+t_3d_pt	center_to_origin(t_3d_pt point, t_map *map)
+{
+	point.x -= map->max_x / 2;
+	point.y -= map->max_y / 2;
+	return (point);
+}
 
 t_3d_pt	scale_proj(t_3d_pt point, t_proj *proj)
 {
@@ -30,31 +37,27 @@ t_2d_pt	isometric_proj(t_3d_pt point)
 {
 	t_2d_pt	projected;
 
-	projected.x = (int)((point.x - point.y) * cos(M_PI / 6));
-	projected.y = (int)((point.x + point.y) * sin(M_PI / 6) - point.z);
+	projected.x = (int)((point.x - point.y) * cos(PI / 6));
+	projected.y = (int)((point.x + point.y) * sin(PI / 6) - point.z);
 	return (projected);
 }
 
 t_2d_pt	translate_proj(t_2d_pt point, t_proj *proj)
 {
-	int screen_center_x;
-	int screen_center_y;
-
-	screen_center_x = SC_WIDTH / 2;
-	screen_center_y = SC_HEIGHT / 2;
-	point.x += screen_center_x / proj->width_factor;
-	point.y += screen_center_y / proj->height_factor;
+	point.x += proj->move_x;
+	point.y += proj->move_y;
 	return (point);
 }
 
-t_2d_pt	projection(t_3d_pt point, t_proj *proj)
+t_2d_pt	projection(t_3d_pt point, t_fdf *fdf)
 {
 	t_2d_pt	converted;
 
-	point = scale_proj(point, proj);
-	point = scale_z(point, proj);
+	point = center_to_origin(point, fdf->map);
+	point = scale_proj(point, fdf->proj);
+	point = scale_z(point, fdf->proj);
 	converted = isometric_proj(point);
-	converted = rotate_proj(converted, proj);
-	converted = translate_proj(converted, proj);
+	converted = rotate_proj(converted, fdf->proj);
+	converted = translate_proj(converted, fdf->proj);
 	return (converted);
 }

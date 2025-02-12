@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:20 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/10 17:45:12 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:28:37 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	handle_scale(int keycode, t_fdf *fdf)
 int	handle_translate_width(int keycode, t_fdf *fdf)
 {
 	if (keycode == RIGHT_KEY)
-		fdf->proj->width_factor -= 0.2;
+		fdf->proj->move_x += 1.0;
 	else if (keycode == LEFT_KEY)
-		fdf->proj->width_factor += 0.2;
+		fdf->proj->move_x -= 1.0;
 	re_render_img(fdf);
 	return (0);
 }
@@ -35,9 +35,9 @@ int	handle_translate_width(int keycode, t_fdf *fdf)
 int	handle_translate_height(int keycode, t_fdf *fdf)
 {
 	if (keycode == UP_KEY)
-		fdf->proj->height_factor += 0.2;
+		fdf->proj->move_y -= 1.0;
 	else if (keycode == DOWN_KEY)
-		fdf->proj->height_factor -= 0.2;
+		fdf->proj->move_y += 1.0;
 	re_render_img(fdf);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:28:53 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/10 18:04:24 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:30:06 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define SC_HEIGHT 768
 # define COLOR_DEFAULT 0x00FF00
 # define BUFFER_SIZE 100
+# define PI 3.14159265358979323846
 
 # include "keys.h"
 # include "structs.h"
@@ -40,7 +41,7 @@ int		ft_atoi(const char *nptr);
 int		ft_atoi_base(char *nptr, int base);
 int		centralize_width(void);
 int     centralize_height(t_map *map);
-int		initial_scale(t_map *map);
+double	initial_scale(t_map *map);
 
 int		is_valid_map(char *file);
 int		*fill_line_value(int **matrix, char **result, int y, int max_x);
@@ -57,9 +58,8 @@ int		handle_scale_z(int keycode, t_fdf *fdf);
 t_map	*init_map(void);
 t_map	*create_map(char *file);
 
-t_2d_pt	projection(t_3d_pt point, t_proj *proj);
+t_2d_pt	projection(t_3d_pt point, t_fdf *fdf);
 t_2d_pt	rotate_proj(t_2d_pt point, t_proj *proj);
-t_2d_pt	projection(t_3d_pt point, t_proj *proj);
 
 t_3d_pt	def_st_pt(int x, int y, int **matrix);
 t_3d_pt	def_end_x(int x, int y, int **matrix);
@@ -75,8 +75,6 @@ void	free_structs(t_fdf *fdf);
 void	re_render_img(t_fdf *fdf);
 void	close_reaction(t_fdf *fdf);
 void    get_max_min_x_y_values(t_fdf *fdf, t_2d_pt point);
-
-float	**fill_view_matrix(t_camera *camera);
 
 t_fdf	*init_fdf(t_map *map);
 

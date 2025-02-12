@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:28:44 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/15 14:15:39 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 15:47:01 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	draw_pt_n_ln(t_st_en_pts pts, t_fdf *fdf, int color)
 	t_2d_pt	start;
 	t_2d_pt	end;
 
-	start = projection(pts.pt3d_start, fdf->proj);
-	end = projection(pts.pt3d_end, fdf->proj);
+	start = projection(pts.pt3d_start, fdf);
+	end = projection(pts.pt3d_end, fdf);
 	line_algo(fdf, start, end, color);
 }
 

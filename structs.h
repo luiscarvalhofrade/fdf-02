@@ -6,25 +6,12 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:58 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/07 19:00:07 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:27:54 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
-
-typedef struct s_camera
-{
-    float	pos_x;
-	float	pos_y;
-	float	pos_z;
-    float	target_x; 
-	float	target_y; 
-	float	target_z;
-    float	up_x;
-	float	up_y;
-	float	up_z;
-}			t_camera;
 
 typedef struct s_start_pos
 {
@@ -61,16 +48,15 @@ typedef struct s_proj
 {
 	double		angle;
 	int			scale;
+	double		move_x;
+	double		move_y;
 	int			max_d_x;
 	int			max_d_y;
 	int			min_d_x;
 	int			min_d_y;
 	int			map_center_x;
 	int			map_center_y;
-	double		width_factor;
-	double		height_factor;
 	double		z_scale;
-	t_camera	*camera;
 }			t_proj;
 
 typedef struct s_fdf
