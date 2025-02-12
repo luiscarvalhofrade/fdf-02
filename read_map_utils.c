@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:43 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/13 21:29:44 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:58:31 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	save_color(char *pt)
 	if (ft_strchr(pt, ','))
 	{
 		info = ft_split(pt, ',');
-		color_value = ft_atoi_base(info[1], 16);
+		color_value = ft_atoi_hex(info[1]);
 		free(info[0]);
 		free(info[1]);
 		free(info);

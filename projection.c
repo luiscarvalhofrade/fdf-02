@@ -6,18 +6,11 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:34 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/12 16:35:17 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:53:45 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-t_3d_pt	center_to_origin(t_3d_pt point, t_map *map)
-{
-	point.x -= map->max_x / 2;
-	point.y -= map->max_y / 2;
-	return (point);
-}
 
 t_3d_pt	scale_proj(t_3d_pt point, t_proj *proj)
 {
