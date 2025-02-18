@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:28:53 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/12 19:20:38 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/18 14:37:11 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,10 @@
 # include "keys.h"
 # include "structs.h"
 # include <fcntl.h>
-# include <limits.h>
 # include <math.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include "./mlx/mlx.h"
+# include <mlx.h>
 
 char	*get_next_line(int fd);
 char	**ft_free_split(char **result, int i);
@@ -72,16 +70,18 @@ void	ft_copy_string(t_list *list, char *str);
 void	ft_free(t_list **list, t_list *clean_node, char *buffer);
 void	line_algo(t_fdf *fdf, t_2d_pt start, t_2d_pt end, int color);
 void	draw_all_pts_n_lns(t_map *map, t_fdf *fdf);
-void	free_structs(t_fdf *fdf);
 void	re_render_img(t_fdf *fdf);
 void	close_reaction(t_fdf *fdf);
 
 t_fdf	*init_fdf(t_map *map);
 
-t_proj	*init_proj(t_map *map);
-
-t_img	*init_img(void *mlx, int sc_width, int sc_height);
-
 t_list	*ft_find_last_node(t_list *list);
+
+int		has_fdf_extension(const char *filename);
+int		is_not_empty(int fd);
+int		has_valid_fdf_header(int fd);
+int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strncmp(const char *s1, const char *s2, int n);
+char	*ft_strrchr(const char *s, int c);
 
 #endif

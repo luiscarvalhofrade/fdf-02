@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:40:27 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/12 18:38:24 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/14 10:34:35 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	get_max_y(char *file)
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
-		return (0);
+		exit(1);
 	line = get_next_line(fd);
 	max_y = 0;
 	while (line)
@@ -43,7 +43,7 @@ int	get_max_x(char *file)
 	max_x = 0;
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
-		return (0);
+		exit(1);
 	line = get_next_line(fd);
 	while (line)
 	{

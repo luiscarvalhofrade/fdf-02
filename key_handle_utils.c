@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:28:12 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/01/13 21:28:16 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/14 10:43:01 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	free_matrix(int **matrix, int size)
 	free(matrix);
 }
 
-void	free_structs(t_fdf *fdf)
+static void	free_structs(t_fdf *fdf)
 {
 	free_matrix(fdf->map->color_matrix, fdf->map->max_y);
 	free_matrix(fdf->map->value_matrix, fdf->map->max_y);

@@ -6,18 +6,12 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:58 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/12 18:42:27 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:32:21 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
-
-typedef struct s_start_pos
-{
-	int		scale;
-	double	height_factor;
-}			t_start_pos;
 
 typedef struct s_map
 {
@@ -26,14 +20,6 @@ typedef struct s_map
 	int	max_x;
 	int	max_y;
 }		t_map;
-
-typedef struct s_pt_3d
-{
-	int	x;
-	int	y;
-	int	z;
-	int	color;
-}		t_pt_3d;
 
 typedef struct s_img
 {

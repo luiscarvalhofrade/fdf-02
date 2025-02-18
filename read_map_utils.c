@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:43 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/12 18:58:31 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/18 15:36:43 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,27 @@ int	is_valid_map(char *file)
 	int		max_x;
 	int		previous_x;
 	char	*line;
+	int		invalid;
 
+	invalid = 1;
 	max_x = 0;
 	previous_x = 0;
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
-		return (0);
+		exit(1);
 	line = get_next_line(fd);
 	previous_x = ft_count_items(line, ' ');
 	while (line)
 	{
 		max_x = ft_count_items(line, ' ');
 		if (previous_x != max_x)
-			return (1);
+			invalid = 0;
 		free(line);
 		line = get_next_line(fd);
 		previous_x = max_x;
 	}
 	free(line);
-	close(fd);
-	return (0);
+	return (close(fd), invalid);
 }
 
 int	save_point(char *pt)

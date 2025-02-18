@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:49:19 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/12 19:17:55 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/12 19:56:24 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	hex_util(char ptr, int *digit, int *value)
 	else
 	{
 		*digit = 16;
-		return;
+		return ;
 	}
 	*value = *value * 16 + *digit;
 }
@@ -42,7 +42,6 @@ int	ft_atoi_hex(char *nptr)
 			minus *= -1;
 		nptr++;
 	}
-
 	while (*nptr)
 	{
 		hex_util(*nptr, &digit, &value);

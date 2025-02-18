@@ -6,7 +6,7 @@
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 21:29:47 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/12 18:44:37 by luide-ca         ###   ########.fr       */
+/*   Updated: 2025/02/14 10:35:05 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	**get_value_matrix(char *file, t_map *map, int **matrix)
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
-		return (NULL);
+		exit(1);
 	y = 0;
 	while (y < map->max_y)
 	{
@@ -47,7 +47,7 @@ int	**get_color_matrix(char *file, t_map *map, int **matrix)
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
-		return (NULL);
+		exit(1);
 	y = 0;
 	while (y < map->max_y)
 	{
@@ -71,10 +71,10 @@ t_map	*create_map(char *file)
 	int		**color_matrix;
 
 	map = init_map();
-	if (is_valid_map(file) == 1)
+	if (is_valid_map(file) == 0)
 	{
 		free(map);
-		return (NULL);
+		exit(1);
 	}
 	map->max_y = get_max_y(file);
 	map->max_x = get_max_x(file);

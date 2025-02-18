@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   keys.h                                             :+:      :+:    :+:   */
+/*   is_valid_fdf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luide-ca <luide-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/13 21:29:25 by luide-ca          #+#    #+#             */
-/*   Updated: 2025/02/14 10:27:05 by luide-ca         ###   ########.fr       */
+/*   Created: 2025/02/18 12:30:06 by luide-ca          #+#    #+#             */
+/*   Updated: 2025/02/18 14:38:40 by luide-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KEYS_H
-# define KEYS_H
+#include "fdf.h"
 
-# define ESC_KEY 65307
-# define RIGHT_KEY 65363
-# define LEFT_KEY 65361
-# define UP_KEY 65362
-# define DOWN_KEY 65364
-# define PLUS_KEY 65451
-# define MINUS_KEY 65453
-# define F1_KEY 65470
-# define F2_KEY 65471
-# define F3_KEY 65472
-# define F4_KEY 65473
+int	has_fdf_extension(const char *filename)
+{
+	const char	*ext;
 
-#endif
+	ext = ft_strrchr(filename, '.');
+	if (ext && ft_strcmp(ext, ".fdf") == 0)
+		return (1);
+	else
+		return (0);
+}
+
+int	is_not_empty(int fd)
+{
+	char	buffer[1];
+
+	if (read(fd, buffer, 1) > 0)
+		return (1);
+	else
+		return (0);
+}
